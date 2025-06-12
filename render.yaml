@@ -1,0 +1,14 @@
+
+services:
+  - type: web
+    name: alpaca-webhook
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python alpaca_webhook_server.py"
+    envVars:
+      - key: ALPACA_API_KEY
+        value: your_alpaca_api_key_here
+      - key: ALPACA_SECRET_KEY
+        value: your_alpaca_secret_key_here
